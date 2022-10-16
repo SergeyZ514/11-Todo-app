@@ -1,0 +1,73 @@
+@import '../../styles/variables.scss';
+
+.todo-item {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 50px 1fr 100px 100px;
+
+    column-gap: 5px;
+
+
+    &_checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+        &+label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+
+
+            &::before {
+                content: '';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+                width: 40px;
+                border: 2px $main_color solid;
+                border-radius: 8px;
+                background-color: rgba($color: $main_color, $alpha: 0.4);
+            }
+        }
+
+        &:checked+label::before {
+            content: '\2713';
+            font-size: 35px;
+            font-weight: bold;
+            background-color: $main_color;
+
+        }
+
+        &:focus+label::before {
+            outline: 2px $active_color solid;
+            outline-offset: -2px;
+            box-shadow: inset 40px 40px rgba($color: $active_color, $alpha: 0.2);
+        }
+
+    }
+
+    &_input {
+        background-color: rgba($color: $main_color, $alpha: 0.6);
+        height: 50px;
+        padding: 0 15px;
+        border-radius: 2px;
+        color: #fff;
+        letter-spacing: 1.5px;
+        transition: all 0.3s;
+
+        &:focus {
+            background-color: rgba($color: $main_color, $alpha: 0.9);
+            color: #fff;
+            scale: 1.01;
+        }
+
+        &__completed {
+            text-decoration: line-through;
+            background-color: rgba($color: #ffffff, $alpha: 0.35);
+            color: rgba($color: #ffffff, $alpha: 0.8);
+        }
+    }
+}

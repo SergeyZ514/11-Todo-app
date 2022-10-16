@@ -1,0 +1,24 @@
+.footer {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 5px;
+
+    &_filters {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        column-gap: 5px;
+        justify-content: end;
+        align-items: center;
+    }
+
+    &_remove {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        justify-self: end;
+    }
+}

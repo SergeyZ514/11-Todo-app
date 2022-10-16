@@ -1,0 +1,44 @@
+@import './variables.scss';
+
+.btn {
+    height: 50px;
+    min-width: 100px;
+    padding: 0 15px;
+    border-radius: 4px;
+    border-width: 0;
+    background-color: $main_color;
+    font-family: 'Agency FB';
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: white;
+    text-transform: uppercase;
+
+
+    &__active {
+        background-color: $active_color;
+        color: black;
+    }
+
+    &:active {
+        background-color: $active_color;
+        color: black;
+    }
+
+    &:focus {
+        outline-offset: -2px;
+        outline-style: solid;
+        outline-color: $active_color;
+        outline-width: 2px;
+        box-shadow: inset 50px 100px rgba($color: $active_color, $alpha: 0.2);
+    }
+
+    &:hover {
+        cursor: pointer;
+        outline-offset: -2px;
+        outline-style: solid;
+        outline-color: $active_color;
+        outline-width: 2px;
+        background-color: $main_color, $active_color;
+        box-shadow: inset 50px 100px rgba($color: #1defef, $alpha: 0.2);
+    }
+}

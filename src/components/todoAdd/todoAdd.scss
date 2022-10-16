@@ -1,0 +1,37 @@
+.todo-add {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) auto;
+
+    column-gap: 5px;
+    align-items: center;
+    padding: 0 105px 0 55px;
+
+
+    &_input {
+        height: 50px;
+        padding: 0 15px;
+        background-color: #525a67;
+        border: 1px solid;
+        border-radius: 2px;
+        border-color: #696f79;
+        font-family: 'Agency FB Cyrillic';
+        font-weight: bold;
+        letter-spacing: 1.5px;
+
+        &__active {
+            background-color: #0e1425;
+            outline: none;
+            border-color: #fff;
+        }
+
+        &::placeholder {
+            color: #a2a3a8;
+        }
+
+        &:focus {
+            background-color: #0e1425;
+            outline: none;
+            border-color: #fff;
+        }
+    }
+}
